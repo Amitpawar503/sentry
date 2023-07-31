@@ -1,0 +1,25 @@
+▶ Parsing command line ...
+
+▶ Detecting Docker platform
+Detected Docker platform is linux/arm64
+
+▶ Initializing Docker Compose ...
+
+▶ Setting up error handling ...
+#1 [internal] load build definition from Dockerfile
+#1 sha256:0ef0e55c3c4472db7ab4cdeefac5bd1240de30db605fc71c9b43493ea07226a7
+#1 transferring dockerfile: 297B done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:a7925914e7c6786115c74c82f83899cb0e39288b1b1aab5a0fbda8a04118ffeb
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/debian:bullseye-slim
+#3 sha256:0a5e3537f6f00069b5f0ddc33b847bdbbcb70a30443a039ccea22aa84eb155d5
+#3 ERROR: failed to do request: Head "https://registry-1.docker.io/v2/library/debian/manifests/bullseye-slim": Failed to lookup host: airtelproxy.airtel.com
+------
+ > [internal] load metadata for docker.io/library/debian:bullseye-slim:
+------
+failed to solve with frontend dockerfile.v0: failed to create LLB definition: failed to do request: Head "https://registry-1.docker.io/v2/library/debian/manifests/bullseye-slim": Failed to lookup host: airtelproxy.airtel.com

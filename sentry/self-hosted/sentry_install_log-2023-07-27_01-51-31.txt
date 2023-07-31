@@ -1,0 +1,48 @@
+▶ Parsing command line ...
+
+▶ Detecting Docker platform
+panic: reflect: indirection through nil pointer to embedded struct [recovered]
+	panic: reflect: indirection through nil pointer to embedded struct
+
+goroutine 1 [running]:
+text/template.errRecover(0x1400044d2e0)
+	/usr/local/go/src/text/template/exec.go:169 +0x18c
+panic({0x1025394e0, 0x1027ebbf0})
+	/usr/local/go/src/runtime/panic.go:1038 +0x21c
+reflect.Value.FieldByIndex({0x1026b6620, 0x140004d6480, 0x99}, {0x140001bab30, 0x2, 0x2})
+	/usr/local/go/src/reflect/value.go:1237 +0x23c
+text/template.(*state).evalField(0x1400044d250, {0x1026b6620, 0x140004d6480, 0x99}, {0x16ee9f6d0, 0xc}, {0x102854430, 0x140002eda70}, {0x1400043c7e0, 0x1, ...}, ...)
+	/usr/local/go/src/text/template/exec.go:616 +0x3a8
+text/template.(*state).evalFieldChain(0x1400044d250, {0x1026b6620, 0x140004d6480, 0x99}, {0x1026b6620, 0x140004d6480, 0x99}, {0x102854430, 0x140002eda70}, {0x1400043c7d0, ...}, ...)
+	/usr/local/go/src/text/template/exec.go:569 +0x170
+text/template.(*state).evalFieldNode(0x1400044d250, {0x1026b6620, 0x140004d6480, 0x99}, 0x140002eda70, {0x1400043c7e0, 0x1, 0x1}, {0x1025c09c0, 0x103716040, ...})
+	/usr/local/go/src/text/template/exec.go:533 +0xd4
+text/template.(*state).evalCommand(0x1400044d250, {0x1026b6620, 0x140004d6480, 0x99}, 0x140002eda40, {0x1025c09c0, 0x103716040, 0x99})
+	/usr/local/go/src/text/template/exec.go:461 +0x398
+text/template.(*state).evalPipeline(0x1400044d250, {0x1026b6620, 0x140004d6480, 0x99}, 0x140004c7080)
+	/usr/local/go/src/text/template/exec.go:435 +0x11c
+text/template.(*state).walk(0x1400044d250, {0x1026b6620, 0x140004d6480, 0x99}, {0x102854238, 0x140002edaa0})
+	/usr/local/go/src/text/template/exec.go:254 +0x238
+text/template.(*state).walk(0x1400044d250, {0x1026b6620, 0x140004d6480, 0x99}, {0x102854508, 0x140002eda10})
+	/usr/local/go/src/text/template/exec.go:263 +0x434
+text/template.(*Template).execute(0x140004d6440, {0x102805d20, 0x140001b76b0}, {0x1026b6620, 0x140004d6480})
+	/usr/local/go/src/text/template/exec.go:217 +0x2d8
+text/template.(*Template).Execute(...)
+	/usr/local/go/src/text/template/exec.go:200
+github.com/docker/cli/cli/command/system.formatInfo({0x10287d678, 0x14000163d40}, {0x0, {0x1400043c650, 0x1, 0x1}, 0x14000346370, {0x0, 0x0, 0x0}}, ...)
+	/go/src/github.com/docker/cli/cli/command/system/info.go:511 +0x1a8
+github.com/docker/cli/cli/command/system.runInfo(0x140002e2b00, {0x10287d678, 0x14000163d40}, 0x140002b2d00)
+	/go/src/github.com/docker/cli/cli/command/system/info.go:88 +0x440
+github.com/docker/cli/cli/command/system.NewInfoCommand.func1(0x140002e2b00, {0x14000098b40, 0x0, 0x2})
+	/go/src/github.com/docker/cli/cli/command/system/info.go:54 +0x40
+github.com/docker/cli/vendor/github.com/spf13/cobra.(*Command).execute(0x140002e2b00, {0x140002ecb20, 0x2, 0x2})
+	/go/src/github.com/docker/cli/vendor/github.com/spf13/cobra/command.go:850 +0x668
+github.com/docker/cli/vendor/github.com/spf13/cobra.(*Command).ExecuteC(0x14000116580)
+	/go/src/github.com/docker/cli/vendor/github.com/spf13/cobra/command.go:958 +0x404
+github.com/docker/cli/vendor/github.com/spf13/cobra.(*Command).Execute(...)
+	/go/src/github.com/docker/cli/vendor/github.com/spf13/cobra/command.go:895
+main.runDocker(0x14000163d40)
+	/go/src/github.com/docker/cli/cmd/docker/docker.go:287 +0x260
+main.main()
+	/go/src/github.com/docker/cli/cmd/docker/docker.go:298 +0xd0
+FAIL: Unsupported docker architecture .
